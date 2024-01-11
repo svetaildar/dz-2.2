@@ -2,6 +2,8 @@
 
 const screenPrice = 70000;
 let percentage = 10;
+let hobby = 11;
+
 
 
 
@@ -28,7 +30,7 @@ screensValue = prompt('Тип экрана: шаблонные, с уникал�
 
 responsive = prompt('Нужен ли респонсивный сайт?');
 
- if (responsive == 'да'  || responsive == 'Да') { 
+if (responsive == 'да'  || responsive == 'Да') { 
 
   responsive = true; 
 } 
@@ -42,30 +44,23 @@ else {
 
  function getAllServicePrices() 
   { 
-  for (let i = 0; i < 2; i++) {
+ for (let i = 0; i < 2; i++) {
   // запускается не больше 2 шагов от 0 до 1.
  if (i == 0) 
   { 
     service1 = prompt('Какой сервис нужен? сервис 1');
-    servicePrice1 = +prompt('Сколько это будет стоить?');
+    do servicePrice1 = +prompt('Сколько это будет стоить?');
+    while (Number.isNaN(servicePrice1))
   }
  if (i == 1) 
   {
     service2 = prompt('Какой еще сервис нужен? сервис 2');
-    servicePrice2 = +prompt('Сколько это будет стоить?');
+    do servicePrice2 = +prompt('Сколько это будет стоить?');
+    while (Number.isNaN(servicePrice2))
   }
 }
 return  +servicePrice1 + +servicePrice2; //'сумма всех дополнительных услуг'
   }
-
-
-
-sum = getAllServicePrices();
-if (!Number.isNaN(sum)) {
-  console.log('Это число.');
-} else {
-  console.log('Это не число.');
-}
 
 
 
@@ -85,6 +80,7 @@ function getFullPrice() {
 
 
 asking();
+sum = getAllServicePrices();
 let fullPrice = getFullPrice();
 allServicePrices = sum;
 // servicePercentPrice = getServicePercentPrices(); //полная стоимость за вычетом скидки
@@ -104,12 +100,12 @@ console.log('Полная стоимость со скидкой - ', getFullPri
 
 
 
+
+
+
+
+//console.log()
 // const screenPrice = 70000;
-
-
-
-
-
 
 
 
@@ -195,4 +191,12 @@ console.log('Полная стоимость со скидкой - ', getFullPri
 
 
 // function getServicePercentPrices() {
+
+
+// if (!Number.isNaN(sum)) {
+//   console.log('Это число.');
+// } else {
+//   console.log('Это не число.');
+// }
+
 //    }

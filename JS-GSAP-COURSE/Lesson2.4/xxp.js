@@ -69,7 +69,7 @@ let service2  = prompt('Какой еще сервис тебе нужен?');
 console.log(service2);
 
 let servicePrice2 = +prompt("Сколько будет стоить этот второй сервис?");
-console.log(service2);
+console.log(servicePrice2);
 
 
 const screenPrice = 3000;

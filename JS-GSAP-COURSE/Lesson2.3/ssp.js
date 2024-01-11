@@ -34,3 +34,13 @@ const fullPrice = 2000000;
 console.log(typeof fullPrice);
 const responsive = true;
 console.log(typeof responsive);
+
+let x = 5;
+
+if (x > 10) {
+  console.log('Условие верно');
+} else {
+  console.log('Условие не верно'); 
+}
+
+let 

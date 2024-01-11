@@ -2,7 +2,6 @@
 
 const screenPrice = 70000;
 let percentage = 10;
-let hobby = 11;
 
 
 

@@ -135,9 +135,7 @@ console.log('Стоимость второго сервиса - ', servicePrice2
 console.log('Полная стоимость без скидки - ', fullPrice); 
 console.log('Полная стоимость со скидкой - ', getFullPrice() - Math.round(getFullPrice() * 0.10));
 console.log(getRollbackMessage(fullPrice));
-console.log(getRollbackMessage(fullPrice));
 
-let a1;
 
 
 

@@ -2,7 +2,6 @@
 
 let screenPrice;
 let percentage = 10;
-let hobby = 11;
 
 
 
@@ -240,8 +239,3 @@ console.log(getRollbackMessage(fullPrice));
 // }
 
 //    }
-
-// function getRollbackMessage(fullPrice) {
-  
-  
-// }

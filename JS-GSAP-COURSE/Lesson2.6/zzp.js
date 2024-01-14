@@ -1,6 +1,6 @@
 'use strict'
 
-const screenPrice = 70000;
+let screenPrice;
 let percentage = 10;
 let hobby = 11;
 
@@ -21,28 +21,37 @@ let sum = 0;
 
 
 
+
 const asking = function() {
-titleProject = prompt('Название проекта?');
+    titleProject = prompt('Название проекта?');
  
- titleProject = getTitle(titleProject);
+    titleProject = getTitle(titleProject);
 
-screensValue = prompt('Тип экрана: шаблонные, с уникальным дизайном, с анимациями?');
+    screensValue = prompt('Тип экрана: шаблонные, с уникальным дизайном, с анимациями?');
 
-responsive = prompt('Нужен ли респонсивный сайт?');
+    responsive = prompt('Нужен ли респонсивный сайт?');
 
-if (responsive == 'да'  || responsive == 'Да') { 
+       if (responsive == 'да'  || responsive == 'Да') { 
 
-  responsive = true; 
-} 
-else {
-    responsive = false; 
-  }
+        responsive = true; 
+     } 
+       else {
+       responsive = false; 
+     }
   
+    
+    {
+    // screenPrice = prompt('Какой еще сервис нужен? сервис 2');
+    do screenPrice = +prompt('Сколько это будет стоить?', 12000)
+    while (Number.isNaN(screenPrice))
+    }
+    screenPrice = Number(screenPrice)
+
 }
 
 
 
- function getAllServicePrices() 
+function getAllServicePrices() 
   { 
  for (let i = 0; i < 2; i++) {
   // запускается не больше 2 шагов от 0 до 1.
@@ -68,9 +77,40 @@ return  +servicePrice1 + +servicePrice2; //'сумма всех дополнит
 
 function getTitle(_titleProject) {
   return _titleProject.charAt(0).toUpperCase() + _titleProject.slice(1).toLowerCase();
+
 }
 
+ 
+
+
+const getRollbackMessage = function(price) {
+if (price > 50000) {
+
+   return 'тогда сделаем скидку в 10%';
+} else if (price == 50000) {
+
+   return 'тогда сделаем скидку в 8%';
+} else if (price > 20000 & price < 40000) {
   
+   return 'тогда сделаем скидку в 5%';
+} else if (price == 20000) {
+  
+   return 'тогда сделаем скидку в 3%';
+} else if (price < 20000 & price > 0) {
+  
+   return 'скидка не предусмотрена';
+} else if (price == 0) {
+   return 'какие могут быть скидки?'; 
+} else if (price < 0) {
+  
+  return 'что-то пошло не так'; 
+}
+
+}
+getRollbackMessage();
+
+
+
 
 function getFullPrice() {
   let fullPrice = screenPrice + sum;  // полная стоимость проекта без скидок
@@ -95,7 +135,7 @@ console.log('Сервис второй - ', service2);
 console.log('Стоимость второго сервиса - ', servicePrice2);
 console.log('Полная стоимость без скидки - ', fullPrice); 
 console.log('Полная стоимость со скидкой - ', getFullPrice() - Math.round(getFullPrice() * 0.10));
-
+console.log(getRollbackMessage(fullPrice));
 
 
 
@@ -200,3 +240,8 @@ console.log('Полная стоимость со скидкой - ', getFullPri
 // }
 
 //    }
+
+// function getRollbackMessage(fullPrice) {
+  
+  
+// }
